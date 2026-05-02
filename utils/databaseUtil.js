@@ -1,27 +1,25 @@
-const mongo = require('mongodb');
+// utils/databaseUtil.js
+const { MongoClient } = require('mongodb');
 
-const mongoClient =mongo.MongoClient;
-
-const mongoURI = process.env.MONGO_URI;
-
-const mongoUrl = "mongodb+srv://sarvendra2244:Ss123325@skscluster.mxbabc5.mongodb.net/?appName=skscluster";
-
+const mongoURI = process.env.MONGO_URI; // keep your URI in Render env vars
 let _db;
-const mongoConnect=(callback)=>{
-  mongoClient.connect(mongoUrl).then((client)=>{
-    callback();
-    _db=client.db('rentalSpace');
-  })
-  .catch((error)=>{
-    console.log(error);
-  });
+
+const mongoConnect = async () => {
+  try {
+    const client = await MongoClient.connect(mongoURI);
+    _db = client.db(); // default DB or specify: client.db('rentalspace')
+    console.log("MongoDB connected successfully");
+    return _db;
+  } catch (err) {
+    console.error("MongoDB connection failed:", err);
+    throw err;
+  }
 };
 
-const getDb=()=>{
-  if(!_db){
-    throw new Error("Mongodb is not connected");
-  }
-  return _db;
-}
-exports.getDb= getDb;
-exports.mongoConnect=mongoConnect;
+const getDb = () => {
+  if (_db) return _db;
+  throw new Error("No database found!");
+};
+
+module.exports = { mongoConnect, getDb };
+
