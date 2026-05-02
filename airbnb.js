@@ -1,4 +1,3 @@
-// airbnb.js
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -27,15 +26,15 @@ app.use(errorController.errorController);
 // Port binding for Render
 const PORT = process.env.PORT || 3000;
 
-// Connect to DB, then start server
+// Connect DB, then start server
 mongoConnect()
-  .then(client => {
-    console.log("Database connected successfully");
+  .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running at http://localhost:${PORT}`);
     });
   })
   .catch(err => {
-    console.error("Database connection failed:", err);
+    console.error("Failed to start server:", err);
   });
+
 
