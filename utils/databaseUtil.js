@@ -4,7 +4,7 @@ const mongoClient =mongo.MongoClient;
 
 const mongoURI = process.env.MONGO_URI;
 
-const mongoUrl = "mongodb+srv://sarvendra2244:Ss123325@skscluster.mxbabc5.mongodb.net/rentalspace?retryWrites=true&w=majority";
+const mongoUrl = "mongodb+srv://sarvendra2244:Ss123325@skscluster.mxbabc5.mongodb.net/?appName=skscluster";
 
 let _db;
 const mongoConnect=(callback)=>{
