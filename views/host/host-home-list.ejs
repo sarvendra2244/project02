@@ -261,9 +261,9 @@
             <p id="phone">📞 <%=home.phone%></p>
           </div>
           <button class="book">Book Now</button>
-          <a href="/host/edit-home/<%=home.id%>?editing=true "> <button class="book">Edit home </button></a>
+          <a href="/host/edit-home/<%=home._id%>?editing=true "> <button class="book">Edit home </button></a>
 
-          <form action="/host/delete-home/<%=home.id%>" method="post">
+          <form action="/host/delete-home/<%=home._id%>" method="post">
             <button type="submit">Delete</button>
           </form>
         </li>

@@ -1,7 +1,7 @@
 {
   "name": "final-airbnb-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "airbnb.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon airbnb.js"
@@ -14,6 +14,7 @@
     "body-parser": "^2.2.2",
     "ejs": "^5.0.1",
     "express": "^5.2.1",
+    "mongodb": "^7.2.0",
     "mysql2": "^3.22.2"
   },
   "devDependencies": {

@@ -61,7 +61,7 @@
 <% } %>
 
     <form action="/host/<%= editing? 'updateHome':'result' %>" method="POST">
-      <input type="hidden" name="id" value="<%=editing?home.id:''%>">
+      <input type="hidden" name="id" value="<%=editing?home._id:''%>">
       
       <label for="username">Your Name</label>
       <input type="text" placeholder="Enter your name" name="username" id="username" value="<%=editing?home.username:''%>">

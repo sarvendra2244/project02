@@ -1,5 +1,16 @@
-
 <form action="/favourites" method="post">
-  <button type="submit" style="background-color: green; padding: 5px; :hover{transform: translate(1.1); background-color: #ef8686;}">Add to favourite</button>
-  <input type="hidden" name="id" value="<%= home.id %>">
+  <button
+    type="submit"
+    style="
+      background-color: green;
+      padding: 5px;
+      :hover {
+        transform: translate(1.1);
+        background-color: #ef8686;
+      }
+    "
+  >
+    Add to favourite
+  </button>
+  <input type="hidden" name="id" value="<%= home._id %>" />
 </form>
